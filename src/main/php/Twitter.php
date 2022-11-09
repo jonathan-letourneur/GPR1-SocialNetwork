@@ -13,7 +13,6 @@ class Twitter implements IObservable
 
     public function __construct(array $observers = [])
     {
-        //TODO Review - Single Responsibility Principle
         $this->observers = $observers;
     }
 
@@ -29,7 +28,6 @@ class Twitter implements IObservable
 
     public function subscribe(array $observers): void
     {
-        //TODO Review be consistent with indentation style ("{")
         foreach ($observers as $observer) {
             if (in_array($observer, $this->observers, true)) {
                 throw new SubscriberAlreadyExistsException();
